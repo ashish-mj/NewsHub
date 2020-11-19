@@ -1,0 +1,84 @@
+.box{
+    background-color: white;
+    padding-left: 10px;
+    margin-bottom: -40px;
+    margin-top: -15px;
+}
+.logo{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+h1{
+display: block;
+padding-left: 70px;
+}
+.name{
+    margin-left: -55px;
+}
+.back{
+    background-color: black;
+    color: white;
+}
+h2{
+padding-top: 20px;
+padding-left: 20px;
+}
+.image{
+    width: 400px;
+    height: 250px;
+    margin-left: 20px;
+}
+.news{
+    padding-bottom: 20px;
+}
+p{
+margin-right: 10px;
+}
+h3,h4{
+    color: red;
+}
+.btn-full:link,
+.btn-full:visited{
+ background-color: #ff0000;
+ border: 1px solid #ff0000;
+ color: #fff;
+ margin-right: 25px;
+ margin-top: 20px;
+ font-size: 16px;
+ padding: 10px 24px;
+ border-radius: 100px;
+ margin-left: 25px;
+ text-decoration: none;
+}
+.btn-full:hover,
+.btn-full:active{
+    border: 2px solid #db1818;
+    background-color: #db1818;
+    transition: .1s;
+}
+.main-nav li{
+    list-style: none;
+    margin-left: 25px;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 19px;
+   }
+.main-nav li a:link,
+.main-nav li a:visited{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 8px 0;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #ff0000;
+    transition: .1s;
+}
+
+.span-2-of-3{
+    margin-top: -7px;
+}

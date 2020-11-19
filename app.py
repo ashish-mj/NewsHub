@@ -11,16 +11,7 @@ from newsapi import NewsApiClient
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
-    top_headlines = newsapi.get_top_headlines(
-                                          category='sports',
-                                          language='en',
-                                          country='in')
-    
-    articles = top_headlines['articles']
-    
+def extract(articles):
     desc,news,img,url = [],[],[],[]
     
     for i in range(len(articles)):
@@ -32,7 +23,71 @@ def home():
         url.append(my_articles['url'])
         
     my_list = zip(desc, news, img, url)
+    return my_list
+    
+
+@app.route('/')
+@app.route('/sports')
+def home():
+    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
+    top_headlines = newsapi.get_top_headlines(
+                                          category='sports',
+                                          language='en',
+                                          country='in')
+    
+    articles = top_headlines['articles']
+    my_list = extract(articles)
     return render_template('home.html',my_list=my_list)
+
+@app.route('/entertainment')
+def entertainment():
+    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
+    top_headlines = newsapi.get_top_headlines(
+                                          category='entertainment',
+                                          language='en',
+                                          country='in')
+    
+    articles = top_headlines['articles']
+    my_list = extract(articles)
+    return render_template('home.html',my_list=my_list)
+
+@app.route('/science')
+def science():
+    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
+    top_headlines = newsapi.get_top_headlines(
+                                          category='science',
+                                          language='en',
+                                          country='in')
+    
+    articles = top_headlines['articles']
+    my_list = extract(articles)
+    return render_template('home.html',my_list=my_list)
+
+
+@app.route('/business')
+def business():
+    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
+    top_headlines = newsapi.get_top_headlines(
+                                          category='science',
+                                          language='en',
+                                          country='in')
+    
+    articles = top_headlines['articles']
+    my_list = extract(articles)
+    return render_template('home.html',my_list=my_list)
+
+@app.route('/health')
+def health():
+    newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
+    top_headlines = newsapi.get_top_headlines(
+                                          category='health',
+                                          language='en',
+                                          country='in')
+    
+    articles = top_headlines['articles']
+    my_list = extract(articles)
+    return render_template('home.html',my_list=my_list)
+
 
 if __name__=="__main__": 
     app.run(debug='False')

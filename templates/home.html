@@ -2,20 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Sportify</title>
+    <title>NewsHub...</title>
     <link rel="stylesheet" href="../static/css/normalize.css">
     <link rel="stylesheet" href="../static/css/grid.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="icon" href="../static/images/running.png" type="image/jpg">
+    <link rel="icon" href="../static/images/community.png" type="image/jpg">
   </head>
   <body>
       
     <div class="row">
         <div class="box">
-        <img alt="logo" src="../static/images/running.png">
-        <h3>Sportify...</h3>
+            <nav class="row">
+             <div class="col span-1-of-5">
+            <img alt="logo" class="logo" src="../static/images/community.png">
+            <h1>NewsHub...</h1>
+            </div>
+             <div class="col span-3-of-5">
+            <ul class="main-nav">
+                <li>
+                    <a href="{{url_for('home')}}">SPORTS</a>
+                </li>
+                <li>
+                    <a href="{{url_for('entertainment')}}">ENTERTAINMENT</a>
+                </li>
+                <li>
+                    <a href="{{url_for('science')}}">SCIENCE</a>
+                </li>
+                <li>
+                    <a href="{{url_for('business')}}">BUSINESS</a>
+                </li>
+                <li>
+                    <a href="{{url_for('health')}}">HEALTH</a>
+                </li>
+            </ul>
+            </div>
+             <div class="col span-1-of-5">
+            <h1 class="name">ASHISH M J</h1>
+            </div>
+        </nav>
         </div>
+    <div class="back">
     <div class="top">
       <h2>Top News</h2>  
     </div>
@@ -23,15 +50,17 @@
       {% for news,desc,img, url in my_list %}
         <div class="row">
         <div class="col span-1-of-3">
-        <img src="{{img}}" alt="">
+        <img src="{{img}}" alt=""class="image">
         </div>
         <div class="col span-2-of-3">
-        <h3>News:</h3> {{news}}
-        <h4>Description:</h4> {{desc}}
-        <a href="{{url}}">Read More</a>
+        <h3>News:</h3><p>{{news}}</p>
+        <h4>Description:</h4><p>{{desc}}</p>
+        <br>
+        <a href="{{url}}" class="btn-full">Read More</a>
         </div>
         </div>
        {% endfor %}
+    </div>
     </div>
     </div>
   </body>
