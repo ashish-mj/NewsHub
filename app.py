@@ -21,7 +21,7 @@ def home():
     
     articles = top_headlines['articles']
     
-    desc,news,img = [],[],[]
+    desc,news,img,url = [],[],[],[]
     
     for i in range(len(articles)):
         my_articles = articles[i]
@@ -29,8 +29,9 @@ def home():
         news.append(my_articles['title'])  
         desc.append(my_articles['description'])
         img.append(my_articles['urlToImage'])
+        url.append(my_articles['url'])
         
-    my_list = zip(desc, news, img)
+    my_list = zip(desc, news, img, url)
     return render_template('home.html',my_list=my_list)
 
 if __name__=="__main__": 

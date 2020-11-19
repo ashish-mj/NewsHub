@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sportify</title>
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/running.png" type="image/jpg">
+  </head>
+  <body>
+      
+    <div class="row">
+        <div class="box">
+        <img alt="logo" src="../static/images/running.png">
+        <h3>Sportify...</h3>
+        </div>
+    <div class="top">
+      <h2>Top News</h2>  
+    </div>
+    <div class="news">
+      {% for news,desc,img, url in my_list %}
+        <div class="row">
+        <div class="col span-1-of-3">
+        <img src="{{img}}" alt="">
+        </div>
+        <div class="col span-2-of-3">
+        <h3>News:</h3> {{news}}
+        <h4>Description:</h4> {{desc}}
+        <a href="{{url}}">Read More</a>
+        </div>
+        </div>
+       {% endfor %}
+    </div>
+    </div>
+  </body>
+</html>
