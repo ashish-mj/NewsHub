@@ -68,7 +68,7 @@ def science():
 def business():
     newsapi = NewsApiClient(api_key='dcbd16c218ef4985a822b478b4f20f49')
     top_headlines = newsapi.get_top_headlines(
-                                          category='science',
+                                          category='business',
                                           language='en',
                                           country='in')
     
