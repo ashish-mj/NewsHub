@@ -37,7 +37,7 @@ def home():
     
     articles = top_headlines['articles']
     my_list = extract(articles)
-    return render_template('home.html',my_list=my_list)
+    return render_template('home.html',my_list=my_list, name="Sports")
 
 @app.route('/entertainment')
 def entertainment():
@@ -49,7 +49,7 @@ def entertainment():
     
     articles = top_headlines['articles']
     my_list = extract(articles)
-    return render_template('home.html',my_list=my_list)
+    return render_template('home.html',my_list=my_list, name="Entertainment")
 
 @app.route('/science')
 def science():
@@ -61,7 +61,7 @@ def science():
     
     articles = top_headlines['articles']
     my_list = extract(articles)
-    return render_template('home.html',my_list=my_list)
+    return render_template('home.html',my_list=my_list, name="Science")
 
 
 @app.route('/business')
@@ -74,7 +74,7 @@ def business():
     
     articles = top_headlines['articles']
     my_list = extract(articles)
-    return render_template('home.html',my_list=my_list)
+    return render_template('home.html',my_list=my_list, name="Business")
 
 @app.route('/health')
 def health():
@@ -86,7 +86,7 @@ def health():
     
     articles = top_headlines['articles']
     my_list = extract(articles)
-    return render_template('home.html',my_list=my_list)
+    return render_template('home.html',my_list=my_list, name="Health")
 
 
 if __name__=="__main__": 
